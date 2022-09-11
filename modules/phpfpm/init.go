@@ -20,7 +20,7 @@ func (p Phpfpm) initClient() (client, error) {
 	if p.URL != "" {
 		return p.initHTTPClient()
 	}
-	return nil, errors.New("neither 'socket' nor 'url' set")
+	return nil, errors.New("neither 'address', 'socket' nor 'url' set")
 }
 
 func (p Phpfpm) initHTTPClient() (*httpClient, error) {
